@@ -1,0 +1,111 @@
+<html>
+<title>null</title>
+
+<link rel="stylesheet" href="style.css">
+
+
+<body>
+
+
+<div class="leftPanel">
+
+
+<form>
+	<input type="text" name="command" id="commandInputText">
+	<button type="button" id="commandInputButton">Enter Command</button>
+
+	<br>
+	<input type="text" name="speech">
+	<button type="button" id="speechInputButton">Speak Text</button>
+	<br>
+
+</form>
+
+	<div class="controllerDiv">
+
+
+		<button></button>
+		<button class="firstRowButton">Forward</button><br>
+		<button id="leftButton" class="secondRowButton">Left</button>
+		<button id="stopButton" class="secondRowButton">Stop</button>
+		<button class="secondRowButton">Right</button>
+		<br>
+		<button></button>
+		<button class="firstRowButton">Back</button>
+
+	</div><!-- End of Controller Div -->
+
+	<div id="connectDiv">
+	<input type='text' name='connect' id='connectionTextBox'>
+	<input type="submit" value='Connect' id='connectButton'>
+
+	</div> 
+
+
+
+</div> <!-- end leftPanel Div -->
+
+
+<div class="righPanel">
+
+</div><!-- end rightPanel Div -->
+
+
+
+<script src="jquerysource.js"></script>
+
+<script>
+
+	(function(){
+
+				$('#commandInputButton').click(function() {
+
+						
+						arg = $('#commandInputText').val();
+
+						arg = "@"+arg;
+
+						func = "sendMessage(\'" + arg + "\')";
+ 						
+						$('title').text(func);
+						$('title').text('null');
+
+				});
+
+
+				$('#connectButton').click(function() {
+
+					arg = $('#connectionTextBox').val();
+
+					$('#connectionTextBox').val("");
+
+					func = 'connect(\'' + arg + '\')';
+					$('title').text(func);
+					$('#connectionTextBox').val(func);
+					$('title').text('null');
+
+				});
+
+
+				$('#leftButton').click(function() {
+
+						arg = 4;
+
+						func = "sendMessage(\'" + arg + "\')";
+ 						
+						$('title').text(func);
+						$('title').text('null');
+
+				});
+
+			})();
+
+
+
+</script>
+
+
+</body>
+
+
+</html>
